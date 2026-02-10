@@ -1,66 +1,65 @@
-# 🌲 Forest Hunter (Orman Avcısı)
+# 🌲 Forest Hunter 3D (Orman Avcısı)
 
-A first-person forest hunting game built with vanilla HTML/CSS/JS + Canvas API. No frameworks, no dependencies.
+A first-person 3D forest survival game built with **Three.js**. Wolves and rabid dogs charge at you through a dark, foggy forest — aim, shoot, and survive!
 
-Animals charge towards you from the dark forest — aim with your mouse and shoot them before they reach you!
+## 🎮 Features
 
-## Screenshots
+- 🌲 **Full 3D environment** — procedurally generated forest with trees, moonlight, atmospheric fog
+- 🔫 **Realistic FPS gun model** — detailed 3D pistol with barrel, slide, grip, hand, iron sights, and green dot sight
+- � **Pointer Lock FPS controls** — true mouse-captured FPS aiming with smooth yaw/pitch
+- 🔭 **Aim Down Sights (ADS)** — right-click for zoomed precision aiming (FOV 70→40)
+- 🐺 **4 enemy types** — wolves, alpha wolves, rabid dogs, and big rabid dogs
+- � **Combat effects** — muzzle flash, recoil, screen shake, shell casings
+- 🌊 **Wave system** — escalating difficulty with more and faster enemies each wave
+- 🎵 **Procedural audio** — all sounds generated via Web Audio API
+- 🏆 **Score & combo system** — chain kills for multiplied points
 
-### Menu Screen
-![Menu Screen](screenshots/menu.png)
+## 🐺 Enemy Types
 
-### Gameplay — Animals Approaching
-![Gameplay](screenshots/gameplay.png)
+| Type | Speed | HP | Points | Behavior |
+|------|-------|----|--------|----------|
+| 🐺 Kurt (Wolf) | Medium | 2 | 200 | Zigzag approach |
+| 🐺 Alfa Kurt (Alpha Wolf) | Slow | 4 | 400 | Large, tanky, zigzags |
+| � Kuduz Köpek (Rabid Dog) | Fast | 1 | 100 | Direct charge, foam |
+| � Büyük Kuduz Köpek | Medium | 2 | 180 | Larger, foam effects |
 
-### Gameplay — Gun and HUD
-![HUD](screenshots/hud.png)
-
-## Features
-
-- 🌙 **Atmospheric night forest** — moon, stars, layered tree silhouettes, fireflies, fog
-- 🦌 **4 animal types** — Deer, Wolf, Boar, Bear (each with different speed/health/points)
-- 🔫 **Shooting mechanics** — muzzle flash, recoil, screen shake, ammo counter
-- 💥 **Particle effects** — hit splashes, death explosions, muzzle flash sparks
-- 🌊 **Wave system** — increasing difficulty with each wave
-- 🎵 **Procedural audio** — gunshot, hit, death, and reload sounds via Web Audio API
-- 🏆 **Score + combo system** — chain kills for score multipliers
-- 🎯 **Pseudo-3D perspective** — animals spawn far away and grow as they approach
-
-## Animal Types
-
-| Type | Speed | Health | Points | Behavior |
-|------|-------|--------|--------|----------|
-| 🦌 Deer | Slow | 1 | 100 | Runs straight |
-| 🐺 Wolf | Fast | 1 | 150 | Zigzags |
-| 🐗 Boar | Medium | 2 | 200 | Charges straight |
-| 🐻 Bear | Slow | 3 | 300 | Large, tanky |
-
-## Controls
+## 🕹️ Controls
 
 | Input | Action |
 |-------|--------|
-| 🖱️ Mouse | Aim crosshair |
+| 🖱️ Mouse Move | Look around (FPS camera) |
 | 🖱️ Left Click | Shoot |
+| 🖱️ Right Click (Hold) | Aim Down Sights (zoom) |
 | ⌨️ R | Reload |
+| Esc | Release mouse cursor |
 
-## How to Run
+## 🚀 How to Run
 
 ```bash
-# Clone or download the project, then:
 cd forest-hunter
-npx serve .
+npx serve . -l 3000
 
 # Open http://localhost:3000 in your browser
 ```
 
-Or simply open `index.html` directly in your browser.
+## 🛠️ Tech Stack
 
-## Tech Stack
-
-- **HTML5 Canvas** — all rendering
-- **Vanilla JavaScript** — game engine, physics, AI
+- **Three.js r128** — 3D rendering, lighting, fog, shadows
+- **HTML5 Canvas** — 2D HUD overlay (health, ammo, score, crosshair)
+- **Vanilla JavaScript** — game engine, AI, wave system
 - **Web Audio API** — procedural sound effects
-- **CSS** — minimal (fullscreen canvas, hidden cursor)
+- **Pointer Lock API** — FPS-style mouse capture
+- **Google Fonts** — Orbitron, Russo One, Inter
+
+## 📁 Project Structure
+
+```
+forest-hunter/
+├── index.html      # Entry point, loads Three.js + game
+├── style.css       # Fullscreen layout, HUD overlay styling
+├── game3d.js       # Complete 3D game engine (~800 lines)
+└── README.md
+```
 
 ## License
 
